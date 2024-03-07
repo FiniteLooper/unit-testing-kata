@@ -1,12 +1,3 @@
-# Testing Kata
-
-A kata, or code kata, is defined as an exercise in programming which helps hone your skills through practice and repetition.
-
-The goal of this particular kata is unit testing.
-You will be writing unit tests to support and validate the code you write.
-The goal is to validate the functionality of what the code does.
-In this exercise the particulars of how the code looks, works, and is structured is not as important.
-
 ## Unit Testing
 
 A way to validate that individual "units" of your code produce the expected results with a given set of inputs.
@@ -62,4 +53,4 @@ This is what tests the full implementation or workflow, not individual units of 
 
 ---
 
-# [NEXT (Luhn) ➡](02-Luhn.md)
+# [⬅ PREV (ReadMe)](README.md) | [NEXT (Luhn) ➡](02-Luhn.md)
