@@ -9,7 +9,7 @@
   "devDependencies": {
     "@jsdevtools/coverage-istanbul-loader": "^3.0.5",
     "@types/jasmine": "^5.1.4",
-    "@types/node": "^20.11.24",
+    "@types/node": "^20.11.25",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "codecov": "^3.8.3",
@@ -28,7 +28,7 @@
     "karma-typescript": "^5.5.4",
     "karma-webpack": "^5.0.1",
     "ts-loader": "^9.5.1",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.2",
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4"
   }
