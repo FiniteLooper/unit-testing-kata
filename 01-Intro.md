@@ -33,6 +33,38 @@ it('should throw errors for invalid input', () => {
 This way whenever our code is updated we can run all these tests to validate that the previous/expected behavior still exists.
 Essentially this is testing our business logic and NOT the implementation logic!
 
+### Tips!
+
+You can "focus" a test temporarily by prefixing the `it` function with an `f`. This means that ONLY focused tests will run when these are set.
+
+```js
+//only THIS test will run because it is focused!
+fit('should add valid numbers together', () => {
+  expect(addNumbers(1, 1)).toEqual(2);
+});
+
+it('should throw errors for invalid input', () => {
+  expect(addNumbers()).toThrow('Invalid input!');
+});
+```
+
+You can to the opposite by prefixing with an `x` to temporarily exclude that test
+
+```js
+//only THIS test will NOT run because it is excluded!
+xit('should add valid numbers together', () => {
+  expect(addNumbers(1, 1)).toEqual(2);
+});
+
+it('should throw errors for invalid input', () => {
+  expect(addNumbers()).toThrow('Invalid input!');
+});
+```
+
+You can do the same for `describe` blocks as well: `fdescribe` and `xdescribe`
+
+These are useful when writing tests, but they should not go into the code repository this way.
+
 ### Frameworks
 
 We will be using:
