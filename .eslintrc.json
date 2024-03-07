@@ -1,0 +1,28 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": "./tsconfig.json" },
+  "env": { "es6": true },
+  "ignorePatterns": ["node_modules", "dist", "coverage"],
+  "plugins": ["@typescript-eslint", "only-warn", "prettier"],
+  "extends": ["plugin:@typescript-eslint/strict-type-checked", "plugin:prettier/recommended"],
+  "overrides": [
+    {
+      "files": ["src/**/*.ts"],
+      "rules": {
+        "complexity": ["warn", { "max": 8 }],
+        "eqeqeq": ["warn", "always", { "null": "ignore" }],
+        "prefer-arrow-callback": "warn",
+        "object-shorthand": ["warn", "always"],
+        "max-lines": ["warn", 300]
+      }
+    },
+    {
+      "files": ["*.spec.ts", "test/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/explicit-function-return-type": "off"
+      }
+    }
+  ]
+}

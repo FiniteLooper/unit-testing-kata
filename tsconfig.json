@@ -1,0 +1,22 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "ES2022",
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "module": "ES2022",
+    "esModuleInterop": true,
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "sourceMap": false,
+    "inlineSourceMap": true,
+    "experimentalDecorators": true,
+    "types": ["jasmine"]
+  },
+  "exclude": ["node_modules"]
+}

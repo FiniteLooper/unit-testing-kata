@@ -1,0 +1,65 @@
+# Testing Kata
+
+A kata, or code kata, is defined as an exercise in programming which helps hone your skills through practice and repetition.
+
+The goal of this particular kata is unit testing.
+You will be writing unit tests to support and validate the code you write.
+The goal is to validate the functionality of what the code does.
+In this exercise the particulars of how the code looks, works, and is structured is not as important.
+
+## Unit Testing
+
+A way to validate that individual "units" of your code produce the expected results with a given set of inputs.
+
+A quick example. Given this code:
+
+```js
+function addNumbers(a, b) {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    throw new Error('Invalid input!');
+  }
+  return a + b;
+}
+```
+
+We could write unit tests to verify what the behavior should do and should not do
+
+```js
+it('should add valid numbers together', () => {
+  expect(addNumbers(1, 1)).toEqual(2);
+  expect(addNumbers(1, 2)).toEqual(3);
+  expect(addNumbers(2, 2)).toEqual(4);
+  expect(addNumbers(1, -1)).toEqual(0);
+});
+
+it('should throw errors for invalid input', () => {
+  expect(addNumbers()).toThrow('Invalid input!');
+  expect(addNumbers(1)).toThrow('Invalid input!');
+  expect(addNumbers('foo', 'bar')).toThrow('Invalid input!');
+});
+```
+
+This way whenever our code is updated we can run all these tests to validate that the previous/expected behavior still exists.
+Essentially this is testing our business logic and NOT the implementation logic!
+
+### Frameworks
+
+We will be using:
+
+- Jasmine as our testing framework: https://jasmine.github.io
+- Karma as our test runner: http://karma-runner.github.io
+  - This uses a plugin to execute our code in the Chrome browser here
+
+Angular uses these same frameworks by default, but there are many others to choose from.
+
+## End-To-End Testing (E2E)
+
+This is outside of the scope of this kata, but it's worth mentioning what this is.
+
+> End-to-end testing is a software testing technique that verifies the functionality and performance of an entire software application from start to finish by simulating real-world user scenarios and replicating live data. Its objective is to identify bugs that arise when all components are integrated, ensuring that the application delivers the expected output as a unified entity.
+
+This is what tests the full implementation or workflow, not individual units of code. Basically an example would be: log in, switch users, go to a timesheet, enter data, approve the timesheet, then log out. If all of these things happened as we expected, our test has passed! These can be very difficult to set up, but there is obviously a lot of value in doing so!
+
+---
+
+# [NEXT (Luhn) ➡](02-Luhn.md)

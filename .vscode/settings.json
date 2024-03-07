@@ -1,0 +1,21 @@
+{
+  "files.exclude": {
+    "**/.gitignore": true,
+    "**/.gitkeep": true,
+    ".eslintrc.json": true,
+    ".editorconfig": true,
+    "coverage": false,
+    "dist": false,
+    "node_modules": true
+  },
+  "explorer.fileNesting.patterns": {
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json"
+  },
+  "explorer.fileNesting.expand": false,
+  "editor.formatOnSave": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "cSpell.enabled": true,
+  "cSpell.words": ["luhn"]
+}
