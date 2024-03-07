@@ -19,6 +19,9 @@
     },
     {
       "files": ["*.spec.ts", "test/**/*.ts"],
+      "plugins": ["jasmine"],
+      "extends": ["plugin:jasmine/recommended"],
+      "env": { "jasmine": true },
       "rules": {
         "@typescript-eslint/no-non-null-assertion": "off",
         "@typescript-eslint/explicit-function-return-type": "off"

@@ -72,4 +72,4 @@ In the above example, credit card number `4417 1234 5678 9113` has passed the Lu
 
 ---
 
-# [⬅ PREV (ReadMe)](01-README.md) | [NEXT (Get Started) ➡](03-Get-Started.md)
+# [⬅ PREV (Intro)](01-Intro.md) | [NEXT (Get Started) ➡](03-Get-Started.md)

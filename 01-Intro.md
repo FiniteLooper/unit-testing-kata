@@ -1,12 +1,3 @@
-# Testing Kata
-
-A kata, or code kata, is defined as an exercise in programming which helps hone your skills through practice and repetition.
-
-The goal of this particular kata is unit testing.
-You will be writing unit tests to support and validate the code you write.
-The goal is to validate the functionality of what the code does.
-In this exercise the particulars of how the code looks, works, and is structured is not as important.
-
 ## Unit Testing
 
 A way to validate that individual "units" of your code produce the expected results with a given set of inputs.
@@ -42,6 +33,38 @@ it('should throw errors for invalid input', () => {
 This way whenever our code is updated we can run all these tests to validate that the previous/expected behavior still exists.
 Essentially this is testing our business logic and NOT the implementation logic!
 
+### Tips!
+
+You can "focus" a test temporarily by prefixing the `it` function with an `f`. This means that ONLY focused tests will run when these are set.
+
+```js
+//only THIS test will run because it is focused!
+fit('should add valid numbers together', () => {
+  expect(addNumbers(1, 1)).toEqual(2);
+});
+
+it('should throw errors for invalid input', () => {
+  expect(addNumbers()).toThrow('Invalid input!');
+});
+```
+
+You can to the opposite by prefixing with an `x` to temporarily exclude that test
+
+```js
+//only THIS test will NOT run because it is excluded!
+xit('should add valid numbers together', () => {
+  expect(addNumbers(1, 1)).toEqual(2);
+});
+
+it('should throw errors for invalid input', () => {
+  expect(addNumbers()).toThrow('Invalid input!');
+});
+```
+
+You can do the same for `describe` blocks as well: `fdescribe` and `xdescribe`
+
+These are useful when writing tests, but they should not go into the code repository this way.
+
 ### Frameworks
 
 We will be using:
@@ -62,4 +85,4 @@ This is what tests the full implementation or workflow, not individual units of 
 
 ---
 
-# [NEXT (Luhn) ➡](02-Luhn.md)
+# [⬅ PREV (ReadMe)](README.md) | [NEXT (Luhn) ➡](02-Luhn.md)
