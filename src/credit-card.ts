@@ -65,7 +65,7 @@ export class CreditCard {
       if (this.ccNumStr.startsWith('5')) {
         return 'Mastercard';
       }
-      if (this.ccNumStr.startsWith('')) {
+      if (this.ccNumStr.startsWith('6')) {
         return 'Discover';
       }
     }

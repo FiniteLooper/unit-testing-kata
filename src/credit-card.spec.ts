@@ -14,34 +14,34 @@ describe('Credit Card', (): void => {
       expect(new CreditCard('4701322211111234').isValid).withContext('Visa').toBeTrue();
       expect(new CreditCard('4347699988887777').isValid).withContext('Visa').toBeTrue();
 
-      expect(new CreditCard('5105105105105100').isValid).toBeTrue();
-      expect(new CreditCard('5555555555554444').isValid).toBeTrue();
-      expect(new CreditCard('5425233430109903').isValid).toBeTrue();
-      expect(new CreditCard('5105105105105100').isValid).toBeTrue();
+      expect(new CreditCard('5105105105105100').isValid).withContext('Mastercard').toBeTrue();
+      expect(new CreditCard('5555555555554444').isValid).withContext('Mastercard').toBeTrue();
+      expect(new CreditCard('5425233430109903').isValid).withContext('Mastercard').toBeTrue();
+      expect(new CreditCard('5105105105105100').isValid).withContext('Mastercard').toBeTrue();
 
-      expect(new CreditCard('6011111111111117').isValid).toBeTrue();
-      expect(new CreditCard('6011000990139424').isValid).toBeTrue();
-      expect(new CreditCard('6011000180331112').isValid).toBeTrue();
-      expect(new CreditCard('6011000991300009').isValid).toBeTrue();
+      expect(new CreditCard('6011111111111117').isValid).withContext('Discover').toBeTrue();
+      expect(new CreditCard('6011000990139424').isValid).withContext('Discover').toBeTrue();
+      expect(new CreditCard('6011000180331112').isValid).withContext('Discover').toBeTrue();
+      expect(new CreditCard('6011000991300009').isValid).withContext('Discover').toBeTrue();
     });
 
     it('should ALLOW valid 16 digit card numbers as numbers', () => {
-      expect(new CreditCard(4417123456789113).isValid).toBeTrue();
-      expect(new CreditCard(4917484589897107).isValid).toBeTrue();
-      expect(new CreditCard(4001919257537193).isValid).toBeTrue();
-      expect(new CreditCard(4007702835532454).isValid).toBeTrue();
-      expect(new CreditCard(4701322211111234).isValid).toBeTrue();
-      expect(new CreditCard(4347699988887777).isValid).toBeTrue();
+      expect(new CreditCard(4417123456789113).isValid).withContext('Visa').toBeTrue();
+      expect(new CreditCard(4917484589897107).isValid).withContext('Visa').toBeTrue();
+      expect(new CreditCard(4001919257537193).isValid).withContext('Visa').toBeTrue();
+      expect(new CreditCard(4007702835532454).isValid).withContext('Visa').toBeTrue();
+      expect(new CreditCard(4701322211111234).isValid).withContext('Visa').toBeTrue();
+      expect(new CreditCard(4347699988887777).isValid).withContext('Visa').toBeTrue();
 
-      expect(new CreditCard(5105105105105100).isValid).toBeTrue();
-      expect(new CreditCard(5555555555554444).isValid).toBeTrue();
-      expect(new CreditCard(5425233430109903).isValid).toBeTrue();
-      expect(new CreditCard(5105105105105100).isValid).toBeTrue();
+      expect(new CreditCard(5105105105105100).isValid).withContext('Mastercard').toBeTrue();
+      expect(new CreditCard(5555555555554444).isValid).withContext('Mastercard').toBeTrue();
+      expect(new CreditCard(5425233430109903).isValid).withContext('Mastercard').toBeTrue();
+      expect(new CreditCard(5105105105105100).isValid).withContext('Mastercard').toBeTrue();
 
-      expect(new CreditCard(6011111111111117).isValid).toBeTrue();
-      expect(new CreditCard(6011000990139424).isValid).toBeTrue();
-      expect(new CreditCard(6011000180331112).isValid).toBeTrue();
-      expect(new CreditCard(6011000991300009).isValid).toBeTrue();
+      expect(new CreditCard(6011111111111117).isValid).withContext('Discover').toBeTrue();
+      expect(new CreditCard(6011000990139424).isValid).withContext('Discover').toBeTrue();
+      expect(new CreditCard(6011000180331112).isValid).withContext('Discover').toBeTrue();
+      expect(new CreditCard(6011000991300009).isValid).withContext('Discover').toBeTrue();
     });
 
     it('should ALLOW a valid 16 digit card number as a string with spaces', () => {
@@ -112,6 +112,10 @@ describe('Credit Card', (): void => {
       expect(new CreditCard('4444444444444444').type).toEqual('Unknown');
       expect(new CreditCard('5555555555555555').type).toEqual('Unknown');
       expect(new CreditCard('6666666666666666').type).toEqual('Unknown');
+    });
+
+    it('should NOT detect a type for other numbers', () => {
+      expect(new CreditCard('3530111333300000').type).withContext('JCB').toEqual('Unknown');
     });
   });
 });
